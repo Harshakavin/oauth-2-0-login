@@ -1,0 +1,100 @@
+.box {
+  width: 500px;
+  margin: 200px 0;
+}
+
+.shape1{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -50px;
+}
+.shape2 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -30px;
+  float: left;
+}
+.shape3 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -30px;
+  float: left;
+  margin-left: -31px;
+}
+.shape4 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -25px;
+  float: left;
+  margin-left: -32px;
+}
+.shape5 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -48px;
+  margin-left: -32px;
+  margin-top: -30px;
+}
+.shape6 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -20px;
+  margin-top: -35px;
+}
+.shape7 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -20px;
+  margin-top: -57px;
+}
+.float {
+  position: absolute;
+  z-index: 2;
+}
+
+.form {
+  margin-left: 145px;
+}
+.back{
+
+background: #0264d6; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+height:calc(100vh);
+width:100%;
+}
+
+.header-col{
+  color: black;
+  background: whitesmoke
+}

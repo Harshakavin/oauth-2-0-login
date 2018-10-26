@@ -1,0 +1,145 @@
+<!-- <body style="width: 100%; height: 100%; background: radial-gradient(ellipse at center, #0264d6 1%,#1c2b5a 100%);"> -->
+  <!-- <div class="container" >
+
+    <div class="card m-5 text-center">
+      <div class="card-header">
+        Facebook Post Reader
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">Retrive the facebook post from your accout, Tap on "Get Posts" Button.</p>
+        <a class="btn btn-primary" (click)="getPost()">Get Posts</a>
+      </div>
+    </div>
+
+  </div> -->
+<!-- </body> -->
+
+<div class="back">
+    <h1 class="text-center header-col">OAuth 2.0 Sample Application</h1>
+    <div *ngIf="!allURLImages" class="container">
+
+     <div id="login-row" class="row justify-content-center align-items-center">
+         <div id="login-column" class="col-md-6">
+             <div class="box">
+                 <div class="shape1"></div>
+                 <div class="shape2"></div>
+                 <div class="shape3"></div>
+                 <div class="shape4"></div>
+                 <div class="shape5"></div>
+                 <div class="shape6"></div>
+                 <div class="shape7"></div>
+                 <div class="float">
+                 <div class="form">
+                   <div *ngIf="authCodeStatus === 1" >
+                       <br>
+                       <div class="form-group" style="color: white">
+                       <h4 style="color: white" class="card-text">To give access to your resources </h4>
+                       </div>
+                       <div class="form-group" style="color: white">
+                       <h5   class="card-text">Click "Get Authorize" Button</h5>
+                       </div>
+                       <div class="form-group ">
+                             <input class="btn btn-success" type="button"  (click)="getAuthorize()" name="access" value="Get Authorize">
+                       </div>
+                   </div>
+                   <div *ngIf="authCodeStatus === 2">
+                      <div class="form-group" style="color: white">
+                          <h5   class="card-text">Authorization code recevied :</h5>
+                      </div>
+                      <p style="color: white;font-size:9px;" class="card-text">{{authCode}} </p>
+                      <div class="form-group" style="color: white">
+                      <h5   class="card-text">Click "Get Access Token" </h5>
+                      </div>
+                      <div class="form-group ">
+                            <input class="btn btn-success" type="button"  (click)="getAccess()" name="Login" value="Get Access Token">
+                      </div>
+                    </div>
+
+                    <div *ngIf="authCodeStatus === 3">
+                      <div class="form-group" style="color: white">
+                          <h5   class="card-text">Access Token recevied :</h5>
+                      </div>
+                      <p style="color: white;font-size:9px;" class="card-text">{{accessToken}} </p>
+                      <div class="form-group" style="color: white">
+                      <h5   class="card-text">Click "Get your mobile Upload images" </h5>
+                      </div>
+                      <div class="form-group ">
+                            <input class="btn btn-success" type="button"  (click)="getResources()" name="Login" value="Get resources">
+                      </div>
+                    </div>
+
+                   </div>
+                  </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+    <div *ngIf="allURLImages" class="container">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <h3 style="color: white;text-align: center;"> {{username}}</h3>
+    <div class="accordian">
+    <ul *ngFor="let image of allURLImages">
+		<li>
+			<div class="image_title">
+				<a href="{{image.url}}">{{image.name}}</a>
+			</div>
+			<a href="{{image.url}}">
+				<img [src]="image.url"/>
+			</a>
+		</li>
+	  </ul>
+   </div>
+      <div class="text-center"><input class="btn btn-success" type="button" (click)="logout()" name="back" value="Back"></div>
+      <br>
+      <br>
+      <br>
+    <div class="container">
+	  <div class="row">
+		<div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb"  *ngFor="let image of allURLImages">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                   data-target="#image-gallery">
+                    <img style="height: 200px;" class="img-thumbnail"
+                         [src]="image.url"
+                         alt="Another alt text">
+                </a>
+              <p>{{image.name}}</p>
+            </div>
+     </div>
+	  </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--<div class="container" style="padding-top: 60px">-->
+  <!--<div >-->
+  <!--<div class="row portfolio" *ngFor="let image of allURLImages">-->
+    <!--<div class="col-sm-6 col-md-3">-->
+      <!--<div class="thumbnail">-->
+        <!--<img class="img-responsive" [src]="image.url" alt="The awesome description" data-toggle="modal" data-target="#myModal">-->
+        <!--<div class="caption">-->
+          <!--<p class="btn btn-default btn-xs btn-lg pull-right" rel="tooltip"></p>-->
+          <!--<div class="clearfix">{{image['name']}}</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+ <!--</div>-->
+<!--</div>-->
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!-- We will make a simple accordian with hover effects
+The markup will have a list with images and the titles-->
+
+
+
+

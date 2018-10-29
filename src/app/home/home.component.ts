@@ -48,13 +48,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  // get authrize 
   getAuthorize() {
     console.log("called");
     console.log(this.apiServices.getAuthCode());
     window.location.href = this.apiServices.getAuthCode();
   }
-
+  // get access token
   getAccess() {
   this.route.queryParams.subscribe(params => {
     this.authCode = params['code'];
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
     console.log(err.toString())
    }
  }
-
+  // get user albums
   getResources(){
     try{
       this.getUserName();
@@ -113,6 +113,7 @@ export class HomeComponent implements OnInit {
     console.log(err.toString())
    }
   }
+  // get usernames
   public getUserName(){
     this.apiServices.getName(this.accessToken).subscribe(data5 =>{
                console.log(data5);

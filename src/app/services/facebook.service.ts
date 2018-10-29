@@ -43,18 +43,19 @@ export class FacebookService extends RestService {
     const url = 'https://graph.facebook.com/v2.8/me/albums';
     return this.get(url, header);
   }
-
+  // get request to the mobile uploaded image ids
   public getMobileUploadImages(token:string, id: string){
     const header = new HttpHeaders({'Authorization': 'Bearer ' + token});
     const url = 'https://graph.facebook.com/v2.8/'+id+'/photos';
     return this.get(url, header);
   }
-
+  // get request to get the image 
   public getImage(token:string, id: string): Observable<any> {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + token});
     const url = "https://graph.facebook.com/"+id+"/picture";
     return this.get(url, header);
   }
+  // get request to get the user name
   public getName(token:string): Observable<any> {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + token});
     const url = "https://graph.facebook.com/v2.8/me?fields=name";

@@ -22,13 +22,13 @@ export class FacebookService extends RestService {
   private getUrlEncode(text: string) {
     return encodeURIComponent(text);
   }
-
+  // get request to get the authorization code
   public getAuthCode() :string {
     const redirect_uri = this.getUrlEncode('https://localhost:4200/home/code');
     const scope = this.getUrlEncode('user_birthday user_posts user_friends user_photos user_gender');
     return (`https://www.facebook.com/dialog/oauth?response_type=code&client_id=${this.appid}&redirect_uri=${redirect_uri}&scope=${scope}`);
   }
-
+  // get request to get the access_token
   public getAccessToken(authCode: string): Observable<any> {
     const redirect_uri = this.getUrlEncode('https://localhost:4200/home/code');
     // tslint:disable-next-line:max-line-length
@@ -36,7 +36,7 @@ export class FacebookService extends RestService {
     this.headers.set('Authorization', 'Basic ' + btoa(this.appid + ':' + this.appSecret));
     return this.get(url, this.headers);
   }
-
+  // get request to get the albums
   public getUserAlbums(token: string): Observable<any> {
     const header = new HttpHeaders({'Authorization': 'Bearer ' + token});
     this.headers.set('Authorization', 'Bearer ' + token);

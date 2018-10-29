@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router,private route: ActivatedRoute, private apiServices: FacebookService) {
     console.log(window.location.href);
     console.log(window.location.href.toString().split("=")[1]);
+	// checking wether authCode exsist 
     if(window.location.href.toString().split("=")[1] !== undefined) {
       console.log(window.location.href.toString().split("=")[1]+" ------");
       this.authCode = window.location.href.toString().split("=")[1];
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
     }else{
       this.authCodeStatus = 1;
     }
+	// checking the images from cokkies 
     console.log(window.sessionStorage.getItem('images'));
     if(window.sessionStorage.getItem('images')){
       try {

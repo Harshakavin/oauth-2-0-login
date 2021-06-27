@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  appID : '2461475660536141',
-  appSecret : 'f953b6ea961d2c4a036f5ea6103be303'
+  appID : 'XXX',
+  appSecret : 'XXXX'
 };
 
 /*
